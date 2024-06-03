@@ -1,48 +1,138 @@
+:root {
+    --primary-color: #4a3f35; 
+    --secondary-color: #c89b6d; 
+    --background-color: #f2f2f2; /* Couleur de fond  */
+    --text-color: #333; /* Couleur de texte  */
+    --btn-hover-color: #a67b5b; /* Couleur de survol des boutons */
+    --border-radius: 0.5rem; 
+    --padding: 1.5rem;
+    --margin: 1.5rem;
+    --max-width: 1200px;
+    --hover-transition: all 0.3s ease; /* Transition pour le survol */
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    background-color: beige;
+    padding: var(--padding) calc(var(--padding) * 2);
+    background-color: var(--secondary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.header img {
-    height: 3.125rem; 
+/* style logo h1  */
+.left-header {
+    display: flex;
+    align-items: center;
 }
 
-.header nav ul {
+.left-header img {
+    height: 3.125rem; /* 50px en rem */
+    margin-right: var(--margin);
+}
+
+.left-header h1 {
+    font-size: 2rem;
+    margin: 0;
+    color: var(--primary-color);
+}
+/* ================================ */
+
+/* style menu burger trouver sur : https://uiverse.io/JulanDeAlb/tall-swan-6 */
+.right-header nav {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hamburger {
+    cursor: pointer;
+}
+
+.hamburger input {
+    display: none;
+}
+
+.hamburger svg {
+    height: 3em;
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+    fill: none;
+    stroke: var(--primary-color);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+                stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+    stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked + svg {
+    transform: rotate(-45deg);
+}
+
+.hamburger input:checked + svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+}
+
+.right-header nav ul {
     list-style: none;
     display: flex;
-    gap: 1.25rem; 
+    flex-direction: row;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
-.header nav ul li {
-    display: inline;
+.right-header nav ul.active {
+    display: flex;
 }
 
-.header nav ul li a {
+.right-header nav ul li {
+    margin: 0 var(--margin);
+}
+
+.right-header nav ul li a {
     text-decoration: none;
-    color: black;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    display: block;
+    padding: calc(var(--padding) / 2) 0;
+    transition: var(--hover-transition); /* Ajout de la transition */
 }
+
+.right-header nav ul li a:hover {
+    font-size: 1.3rem;
+}
+/* ================================================================================== */
+
 
 .main-content {
-    padding: 2rem;
+    padding: var(--padding) calc(var(--padding) * 2);
+    max-width: var(--max-width);
+    margin: 0 auto;
 }
 
 .hero {
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 auto 2rem;
+    margin-bottom: calc(var(--margin) * 2);
 }
 
 .introduction {
@@ -50,12 +140,29 @@ body {
     text-align: center;
 }
 
+.introduction h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: var(--margin);
+}
+
+.introduction p {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: var(--margin);
+}
+
 .introduction .btn {
-    background-color: #d4a373;
+    background-color: var(--primary-color);
     color: white;
-    padding: 0.625rem 1.25rem; 
+    padding: 0.75rem 1.5rem;
     text-decoration: none;
-    border-radius: 0.3125rem; 
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
+}
+
+.introduction .btn:hover {
+    background-color: var(--btn-hover-color);
 }
 
 .image-section {
@@ -65,46 +172,89 @@ body {
 
 .image-section img {
     width: 100%;
-    max-width: 37.5rem; 
+    max-width: 500px;
     height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .nouveautes {
-
     text-align: center;
+    margin-top: calc(var(--margin) * 2);
+}
+
+.nouveautes h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: var(--margin);
 }
 
 .nouveautes .produits {
     display: flex;
     justify-content: space-evenly;
-    gap: 1.25rem; 
+    gap: var(--margin);
+    flex-wrap: wrap;
 }
 
 .nouveautes .produit {
-   
     display: flex;
     text-align: center;
     flex-direction: column;
-    border: 1px solid #ccc;
-    padding: 1rem;
-    border-radius: 0.3125rem; 
+    border: 1px solid var(--secondary-color);
+    padding: var(--padding);
+    border-radius: var(--border-radius);
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: calc(33.333% - var(--margin));
+    box-sizing: border-box;
+    align-items: center; 
+}
+
+.nouveautes .produit:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 .nouveautes .produit img {
     width: 100%;
-    max-width: 12.5rem; 
     height: auto;
-    /* max-height: 3rem; */
-    margin-bottom: 0.625rem; 
+    margin-bottom: 0.625rem;
+    border-radius: var(--border-radius);
+    object-fit: cover; /* S'assurer que l'image couvre tout le conteneur */
 }
 
+.nouveautes .produit p {
+    color: var(--text-color);
+    margin-bottom: var(--margin);
+}
 
 .nouveautes .produit .btn {
-    background-color: #d4a373;
+    background-color: var(--primary-color);
     color: white;
-    padding: 0.625rem 1.25rem; 
+    padding: 0.625rem 1.25rem;
     text-decoration: none;
-    border-radius: 0.3125rem; 
+    border-radius: var(--border-radius);
     display: inline-block;
-    margin-top: 0.625rem; 
+    transition: background-color 0.3s ease;
+}
+
+.nouveautes .produit .btn:hover {
+    background-color: var(--btn-hover-color);
+}
+
+/* style footer  */
+
+footer {
+    background-color: var(--secondary-color);
+    text-align: center;
+    padding: var(--padding);
+    margin-top: calc(var(--margin) * 2);
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 1rem;
 }
