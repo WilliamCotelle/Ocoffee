@@ -1,3 +1,110 @@
-* {
-    background-color: red;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: beige;
+}
+
+.header img {
+    height: 3.125rem; 
+}
+
+.header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.25rem; 
+    margin: 0;
+    padding: 0;
+}
+
+.header nav ul li {
+    display: inline;
+}
+
+.header nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.main-content {
+    padding: 2rem;
+}
+
+.hero {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto 2rem;
+}
+
+.introduction {
+    flex: 1;
+    text-align: center;
+}
+
+.introduction .btn {
+    background-color: #d4a373;
+    color: white;
+    padding: 0.625rem 1.25rem; 
+    text-decoration: none;
+    border-radius: 0.3125rem; 
+}
+
+.image-section {
+    flex: 1;
+    text-align: center;
+}
+
+.image-section img {
+    width: 100%;
+    max-width: 37.5rem; 
+    height: auto;
+}
+
+.nouveautes {
+
+    text-align: center;
+}
+
+.nouveautes .produits {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1.25rem; 
+}
+
+.nouveautes .produit {
+   
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 0.3125rem; 
+}
+
+.nouveautes .produit img {
+    width: 100%;
+    max-width: 12.5rem; 
+    height: auto;
+    /* max-height: 3rem; */
+    margin-bottom: 0.625rem; 
+}
+
+
+.nouveautes .produit .btn {
+    background-color: #d4a373;
+    color: white;
+    padding: 0.625rem 1.25rem; 
+    text-decoration: none;
+    border-radius: 0.3125rem; 
+    display: inline-block;
+    margin-top: 0.625rem; 
 }
