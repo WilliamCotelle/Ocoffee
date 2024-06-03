@@ -1,7 +1,41 @@
-<%- include('partials/head', { title: 'Ocoffee - Catalogue' }) %>
+<%- include('partials/head', { title: 'Catalogue - oCoffee' }) %>
 
-<h1>Notre Catalogue</h1>
-<p>Découvrez nos produits.</p>
+<div class="main-content">
+    <section class="catalog-header">
+        <div class="catalog-title">
+            <h1>Notre catalogue</h1>
+        </div>
+    </section>
 
+    <section class="filter-section">
+        <label for="category-select">Catégorie :</label>
+        <select id="category-select">
+            <option value="all">Toutes</option>
+            <option value="category1">Catégorie 1</option>
+            <option value="category2">Catégorie 2</option>
+            <!-- Ajoutez d'autres options de catégorie ici -->
+        </select>
+    </section>
+
+    <section class="products">
+        <div class="product">
+            <img src="/visuals/coffees/302932754.png" alt="Produit 1">
+            <a class="btn" href="/produit">Découvrir</a>
+        </div>
+        <div class="product">
+            <img src="/visuals/coffees/302932754.png" alt="Produit 2">
+            <a class="btn" href="/produit">Découvrir</a>
+        </div>
+        <div class="product">
+            <img src="/visuals/coffees/302932754.png" alt="Produit 3">
+            <a class="btn" href="/produit">Découvrir</a>
+        </div>
+        <!-- Ajoutez d'autres produits ici -->
+    </section>
+
+    <section class="view-all">
+        <a class="btn" href="/catalogue">Voir tout</a>
+    </section>
+</div>
 
 <%- include('partials/foot') %>

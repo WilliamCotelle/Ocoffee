@@ -1,7 +1,16 @@
-<%- include('partials/head', { title: 'Ocoffee - Produit' }) %>
+<%- include('partials/head', { title: 'Détails du produit - oCoffee' }) %>
 
-<h1>Détails du Produit</h1>
-<p>Description du produit ici.</p>
-<a href="/catalogue">Retour au catalogue</a>
+<div class="main-content">
+    <section class="product-illustration">
+        <img src="/visuals/coffees/958090105.png" alt="Illustration du produit">
+    </section>
+
+    <section class="product-details">
+        <h1>Café du Pérou</h1>
+        <p class="publication-date">Publié le 25/02/2022</p>
+        <p>Blabla, texte sur le produit ... Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, debitis.</p>
+        <a class="btn" href="/catalogue">Voir le catalogue</a>
+    </section>
+</div>
 
 <%- include('partials/foot') %>
