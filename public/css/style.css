@@ -258,3 +258,154 @@ footer p {
     color: var(--primary-color);
     font-size: 1rem;
 }
+
+
+/* Style vue article */
+.product-illustration {
+    text-align: center;
+    margin-bottom: var(--margin);
+}
+
+.product-illustration img {
+    width: 100%;
+    max-width: 70%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-details {
+    text-align: center;
+    background-color: white;
+    padding: var(--padding);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-details h1 {
+    color: var(--primary-color);
+    margin-bottom: var(--margin);
+}
+
+.product-details .publication-date {
+    color: var(--secondary-color);
+    margin-bottom: var(--margin);
+}
+
+.product-details p {
+    color: var(--text-color);
+    margin-bottom: var(--margin);
+    line-height: 1.6;
+}
+
+.product-details .btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
+}
+
+.product-details .btn:hover {
+    background-color: var(--btn-hover-color);
+}
+
+/* style vue catalogue  */
+
+.catalog-header {
+    text-align: center;
+    background-image: url('/path/to/background-image.jpg'); /* Image de fond derrière le titre */
+    background-size: cover;
+    background-position: center;
+    padding: var(--padding) 0;
+    border-radius: var(--border-radius);
+    margin-bottom: var(--margin);
+}
+
+.catalog-title h1 {
+    color: white;
+    font-size: 2.5rem;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour le texte */
+    display: inline-block;
+    padding: var(--padding);
+    border-radius: var(--border-radius);
+}
+
+.filter-section {
+    text-align: center;
+    margin-bottom: var(--margin);
+}
+
+.filter-section label {
+    font-size: 1.2rem;
+    margin-right: var(--margin);
+    color: var(--primary-color);
+}
+
+.filter-section select {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--primary-color);
+}
+
+.products {
+    display: flex;
+    justify-content: space-evenly;
+    gap: var(--margin);
+    flex-wrap: wrap;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--secondary-color);
+    padding: var(--padding);
+    border-radius: var(--border-radius);
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: calc(33.333% - var(--margin));
+    box-sizing: border-box;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0.625rem;
+    border-radius: var(--border-radius);
+    object-fit: cover;
+}
+
+.product .btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.625rem 1.25rem;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
+}
+
+.product .btn:hover {
+    background-color: var(--btn-hover-color);
+}
+
+.view-all {
+    text-align: center;
+    margin-top: var(--margin);
+}
+
+.view-all .btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
+}
+
+.view-all .btn:hover {
+    background-color: var(--btn-hover-color);
+}
