@@ -13,3 +13,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const viewAllBtn = document.getElementById('view-all-btn');
+    const hiddenProducts = document.querySelectorAll('.product.hidden');
+
+    viewAllBtn.addEventListener('click', () => {
+        hiddenProducts.forEach(product => {
+            product.classList.remove('hidden');
+        });
+        viewAllBtn.style.display = 'none';
+    });
+});

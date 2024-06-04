@@ -221,7 +221,7 @@ body {
     height: auto;
     margin-bottom: 0.625rem;
     border-radius: var(--border-radius);
-    object-fit: cover; /* S'assurer que l'image couvre tout le conteneur */
+    object-fit: cover; /* S'assurer que l'image couvre tout le cont */
 }
 
 .nouveautes .produit p {
@@ -269,7 +269,7 @@ footer p {
 .product-illustration img {
     width: 100%;
     max-width: 70%;
-    height: 500px; /* ou toute autre hauteur fixe que vous souhaitez */
+    height: 500px; 
     object-fit: cover;
     border-radius: var(--border-radius);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -412,6 +412,10 @@ footer p {
     background-color: var(--btn-hover-color);
 }
 
+.hidden {
+    display: none;
+}
+
 
 
 /* Responsive  */
@@ -492,10 +496,10 @@ footer p {
         margin-top: var(--margin);
     }
     .products img {
-        height: 150px; /* ajustez la hauteur pour les petits écrans */
+        height: 150px; 
     }
     .product-illustration img {
-        height: 200px; /* ajustez la hauteur pour les petits écrans */
+        height: 200px; 
     }
 }
 

@@ -7,15 +7,30 @@
         </div>
     </section>
 
+    <section class="filter-section">
+        <label for="category-select">Catégorie :</label>
+        <select id="category-select">
+            <option value="all">Toutes</option>
+            <option value="category1">Catégorie 1</option>
+            <option value="category2">Catégorie 2</option>
+            <!-- + cat a venir -->
+        </select>
+    </section>
     <section class="products">
-        <% for (const coffee of coffees) { %>
-            <div class="product">
+        <% for (let i = 0; i < coffees.length; i++) { 
+            const coffee = coffees[i]; %>
+            <div class="product <%= i >= 3 ? 'hidden' : '' %>">
                 <img src="/visuals/coffees/<%= coffee.reference %>.png" alt="<%= coffee.name %>">
                 <p><%= coffee.name %></p>
                 <a class="btn" href="/produit/<%= coffee.id %>">Découvrir</a>
             </div>
         <% } %>
     </section>
+
+    <section class="view-all">
+        <button id="view-all-btn" class="btn">Voir tout</button>
+    </section>
 </div>
 
 <%- include('partials/foot') %>
+
