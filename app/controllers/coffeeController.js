@@ -25,7 +25,18 @@ const getCoffeeById = async (req, res) => {
     }
 };
 
+const getHomeData = async (req, res) => {
+    try {
+        const result = await pool.query('SELECT * FROM coffees ORDER BY id DESC LIMIT 3;');
+        res.render('accueil', { coffees: result.rows });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Erreur serveur pas de café par ici');
+    }
+};
+
 module.exports = {
     getAllCoffees,
-    getCoffeeById
+    getCoffeeById,
+    getHomeData
 };
