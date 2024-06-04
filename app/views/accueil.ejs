@@ -1,46 +1,30 @@
 <%- include('partials/head', { title: 'Ocoffee - Accueil' }) %>
 
-
-
 <div class="main-content">
     <div class="hero">
-    <section class="introduction">
-        <h1>oCoffee</h1>
-        <p>Texte d'introduction sur le café. Lorem, ipsum dolor sit amet consectetur adipisicing elit. At repellendus doloremque quisquam culpa voluptatum explicabo dolores, nihil libero, quos excepturi accusamus, eligendi laboriosam voluptas obcaecati omnis hic dolor quo architecto.
-        Recusandae omnis rerum doloribus amet veniam vitae dolorum cumque dolor, mollitia maiores ea natus fuga blanditiis sequi illo ad quam iusto unde sunt, quaerat non impedit accusamus quasi. Vel, dolor.
-        Incidunt aperiam enim inventore eos veritatis fugit optio quisquam voluptate, nam alias? Impedit repellat soluta dolorum eos, totam aliquid fuga accusantium magni repudiandae facere, vel porro voluptate doloribus a perferendis.
-        </p>
-        <a class="btn" href="/catalogue">Voir le catalogue</a>
-    </section>
+        <section class="introduction">
+            <h1>oCoffee</h1>
+            <p>Jean et Jacques Pepper, deux frères passionnés par le café, sont les fondateurs de notre boutique. Avec une expertise approfondie et un amour profond pour cette délicieuse boisson, ils ont créé un espace où le café est célébré comme une expérience raffinée et inspirante.</p>
+            <a class="btn" href="/catalogue">Voir le catalogue</a>
+        </section>
 
-    <section class="image-section">
-        <img src="/visuals/about.jpg" alt="Jolie image de cafés">
-    </section>
-</div>
+        <section class="image-section">
+            <img src="/visuals/about.jpg" alt="Jolie image de cafés">
+        </section>
+    </div>
 
     <section class="nouveautes">
         <h2>Nouveautés</h2>
         <div class="produits">
-        
-            <div class="produit">
-                <img src="/visuals/coffees/582954954.png" alt="Image du produit">
-                <p>Lorem ipsum dolor sit amet.</p>
-                <a class="btn" href="/produit">Découvrir</a>
-            </div>
-            <div class="produit">
-                <img src="/visuals/coffees/795501340.png" alt="Image du produit">
-                <p>Lorem ipsum dolor sit amet.</p>
-                <a class="btn" href="/produit">Découvrir</a>
-            </div>
-            <div class="produit">
-                <img src="/visuals/coffees/954589100.png" alt="Image du produit">
-                <p>Lorem ipsum dolor sit amet.</p>
-                <a class="btn" href="/produit">Découvrir</a>
-            </div>
-    
+            <% coffees.forEach(coffee => { %>
+                <div class="produit">
+                    <img src="/visuals/coffees/<%= coffee.reference %>.png" alt="Image du produit">
+                    <p><%= coffee.name %></p>
+                    <a class="btn" href="/produit/<%= coffee.id %>">Découvrir</a>
+                </div>
+            <% }); %>
         </div>
     </section>
 </div>
-
 
 <%- include('partials/foot') %>

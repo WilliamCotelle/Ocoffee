@@ -2,13 +2,18 @@ const express = require('express');
 const coffeeController = require('./controllers/coffeeController');
 const router = express.Router();
 
-// Routes
-router.get('/', (req, res) => {
-    res.render('accueil');
+
+router.get('/boutique', (req, res) => {
+    res.render('boutique');
 });
+router.get('/', coffeeController.getHomeData);
 
 router.get('/catalogue', coffeeController.getAllCoffees);
 
 router.get('/produit/:id', coffeeController.getCoffeeById);
+
+router.use((req, res) => {
+    res.status(404).render('404');
+});
 
 module.exports = router;
