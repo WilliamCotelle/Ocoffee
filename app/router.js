@@ -1,4 +1,5 @@
 const express = require('express');
+const coffeeController = require('./controllers/coffeeController');
 const router = express.Router();
 
 // Routes
@@ -6,12 +7,8 @@ router.get('/', (req, res) => {
     res.render('accueil');
 });
 
-router.get('/catalogue', (req, res) => {
-    res.render('catalogue');
-});
+router.get('/catalogue', coffeeController.getAllCoffees);
 
-router.get('/produit', (req, res) => {
-    res.render('produit');
-});
+router.get('/produit/:id', coffeeController.getCoffeeById);
 
 module.exports = router;
