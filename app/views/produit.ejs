@@ -2,15 +2,19 @@
 
 <div class="main-content">
     <section class="product-illustration">
-        <img src="/visuals/coffees/958090105.png" alt="Illustration du produit">
+        <img src="/visuals/coffees/<%= coffee.reference %>.png" alt="Illustration du produit">
     </section>
 
     <section class="product-details">
-        <h1>Café du Pérou</h1>
-        <p class="publication-date">Publié le 25/02/2022</p>
-        <p>Blabla, texte sur le produit ... Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, debitis.</p>
+        <h1><%= coffee.name %></h1>
+        <p class="publication-date">Publié le <%= new Date().toLocaleDateString() %></p>
+        <p><%= coffee.description %></p>
+        <p>Origine : <%= coffee.origin %></p>
+        <p>Prix au kilo : <%= coffee.pricekg %> €</p>
+        <p>Caractéristique principale : <%= coffee.main_characteristic %></p>
         <a class="btn" href="/catalogue">Voir le catalogue</a>
     </section>
 </div>
 
 <%- include('partials/foot') %>
+
